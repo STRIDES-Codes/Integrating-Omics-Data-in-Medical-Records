@@ -27,7 +27,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = []
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES":[
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+    #  "DEFAULT_PERMISSION_CLASSES":[
+    #      "rest_framework.permissions.IsAuthenticated",
+    #  ],
+}
 
+FILE_UPLOAD_HANDLERS=[
+    'django.core.files.uploadhandler.MemoryFileUploadHandler',
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,17 +50,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'backend',
+    'rest_framework.authtoken',
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOW_ALL_ORIGINS=True
+AUTH_USER_MODEL = 'backend.User'
 
 ROOT_URLCONF = 'one_folder.urls'
 
