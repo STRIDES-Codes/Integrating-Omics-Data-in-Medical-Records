@@ -41,4 +41,4 @@ Use Artificial Intelligence to provide more in depth analysis with detailed outp
 * Abdesselam BOUGDIRA, PhD candidate, abdesselam.bougdira@usmba.ac, USMBA, Fes, Morocco.
 * Mustapha LEMSEYAH, Engineering student, mustapha.lemsyah@gmail.com, Hitech, Rabat, Morocco.
 * Douae EL GHOUBALI, PhD candidate, douae1231@gmail.com, UM6SS, Casablanca, Morocco. 
-* Hédia TNANI, Pasteur Institut, Tunisia.
+* Hédia TNANI, PhD, hediatnani0@gmail.com, Pasteur Institut, Tunisia.
