@@ -12,8 +12,8 @@ However, it has been a challenge to both add the omics data into the EHRs, due t
 ## Why fix it ?
 Integrative multi-omic data analysis is of growing importance because it provides a holistic view of molecular fingerprints for each patient’s condition.
 
-![](Screenshot from 2021-06-05 15-31-51.png)
 
+![](https://github.com/STRIDES-Codes/Integrating-Omics-Data-in-Medical-Records/blob/main/images/Screenshot%20from%202021-06-05%2015-31-51.png)
 
 This project aims to provide an easily manageable database to store both patient’s EHRs and -omics data and provide clinicians with readable and easily interpretable output that helps them in the process of decision taking.
 
@@ -22,17 +22,22 @@ As a start, and due to time constraint, we will be focusing on integrating trans
 
 ### Workflow diagram
 ![](images/workflow.png)
-### How to use it
+
+
+### How to use I-Folder:
+
+## Dependencies: 
 
 ## Planned features
 - Incorporate more Omics data into our tool
 - Use Artificial Intelligence to provide more in depth analysis with detailed output.
 
 
+
 ## Team
 * Abdellah IDRISSI AZAMI, PhD candidate, idrissi.azami.abdellah@gmail.com, UM6SS, Casablanca, Morocco.
 * Nihal HABIB, PhD candidate, nhlhabib98@gmail.com, UM6SS, Casablanca, Morocco.
-* Abdesselam BOUGDIRA, PhD candidate, abdesselam.bougdira@usmba.ac, USMBA, Fes, Morocco.
+* Abdesselam BOUGDIRA, PhD in Engineering, abdesselam.bougdira@usmba.ac,Laboratory of Engineering Sciences, USMBA, Fez, Morocco.
 * Mustapha LEMSEYAH, Engineering student, mustapha.lemsyah@gmail.com, Hitech, Rabat, Morocco.
 * Douae EL GHOUBALI, PhD candidate, douae1231@gmail.com, UM6SS, Casablanca, Morocco. 
 * Hédia TNANI, PhD, hediatnani0@gmail.com, Pasteur Institut, Tunisia.
