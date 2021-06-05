@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CovMA',
+      title: 'One Folder',
       theme: ThemeData(
         // This is the theme of your application.
         //
