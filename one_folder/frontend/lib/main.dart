@@ -26,6 +26,5 @@ class MyApp extends StatelessWidget {
       initialRoute: '',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
-    Navigator.pushNamed(context, '', arguments: {});
   }
 }
