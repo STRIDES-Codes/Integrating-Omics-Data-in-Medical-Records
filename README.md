@@ -1,12 +1,5 @@
 # Integrating-Omics-Data-in-Medical-Records
 
-## Participants
-* Abdellah IDRISSI AZAMI.
-* Nihal HABIB.
-* Abdesselam BOUGDIRA.
-* Mustapha LEMSEYAH.
-* Douae EL GHOUBALI.
-* Hédia TNANI.
 ### How to cite:
 
 ## Background
@@ -19,7 +12,7 @@ However, it has been a challenge to both add the omics data into the EHRs, due t
 ## Why fix it ?
 Integrative multi-omic data analysis is of growing importance because it provides a holistic view of molecular fingerprints for each patient’s condition.
 
-![Screenshot from 2021-06-05 09-30-26](https://user-images.githubusercontent.com/52707598/120888097-7160f500-c5ee-11eb-856c-6f5ce50d308b.png)
+![](Screenshot from 2021-06-05 15-31-51.png)
 
 
 This project aims to provide an easily manageable database to store both patient’s EHRs and -omics data and provide clinicians with readable and easily interpretable output that helps them in the process of decision taking.
