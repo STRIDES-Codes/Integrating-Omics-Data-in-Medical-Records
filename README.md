@@ -1,7 +1,12 @@
 # Integrating-Omics-Data-in-Medical-Records
 
 ## Participants
-Abdellah IDRISSI AZAMI, Nihal HABIB, Abdesselam BOUGDIRA, Mustapha LEMSEYAH, Douae EL GHOUBALI, Hédia TNANI.
+* Abdellah IDRISSI AZAMI.
+* Nihal HABIB.
+* Abdesselam BOUGDIRA.
+* Mustapha LEMSEYAH.
+* Douae EL GHOUBALI.
+* Hédia TNANI.
 ### How to cite:
 
 ## Background
