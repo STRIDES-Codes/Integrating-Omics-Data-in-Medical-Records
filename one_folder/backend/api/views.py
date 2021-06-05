@@ -277,3 +277,31 @@ def patients_detail(request, pk):
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+@api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated,))
+@renderer_classes((TemplateHTMLRenderer, JSONRenderer))
+@parser_classes((MultiPartParser, FormParser))
+@renderer_classes((JSONRenderer))
+def Virus_view(request):
+    if request.method == 'POST':
+    # def post(self, request, *args, **kwargs):
+        file_serializer = SequenceSerializer(data=request.data)
+        if file_serializer.is_valid():
+            patient = Patient.objects.get(id = request.data['patient'])
+            add_date = datetime.datetime.now()
+            add_date=add_date.strftime("%m-%d-%Y_%H:%M:%S")
+            # Path(f"Sequence/{patient.cin}/virus").mkdir(parents=True, exist_ok=True)
+            with open(f"tmp/{patient.id}/{add_date}_{request.data['direction']}.fastq", "w") as f:
+                f.write(request.data['content'])
+            seq = Sequence(patient=patient, sequnce=f"tmp/{patient.id}/{add_date}_{request.data['direction']}.fastq",direction = request.data['direction'])
+            seq.save()
+            os.remove(f"tmp/{patient.id}/{add_date}_{request.data['direction']}.fastq")
+            # file_serializer.save()
+            if request.accepted_renderer.format == 'html':
+                return HttpResponse('')
+            return Response(file_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.method=='GET':
+        virus = Sequence.objects.all()
+        serializer = SequenceSerializer(virus)
+        return Response(serializer.data)

@@ -81,3 +81,9 @@ class Analysis_serializer (serializers.Serializer):
     patient = serializers.CharField()
     class Meta:
         fields = ['patient']
+
+class SequenceSerializer (serializers.ModelSerializer):
+    content = serializers.CharField()
+    class Meta:
+        model = Sequence
+        fields = ['id','patient','content', 'direction']
