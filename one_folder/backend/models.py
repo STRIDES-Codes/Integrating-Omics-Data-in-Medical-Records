@@ -81,3 +81,8 @@ class GeneExpression(models.Model):
     expression = models.DecimalField(_("Expression level"), max_digits=10, decimal_places=3)
     sequence = models.ForeignKey(Sequence, verbose_name=_("Sequence"), on_delete=models.CASCADE)
     date = models.DateField(_("Adding date"), auto_now=False, auto_now_add=False)
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
