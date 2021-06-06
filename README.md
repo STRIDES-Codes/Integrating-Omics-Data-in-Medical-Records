@@ -21,7 +21,7 @@ This project aims to provide an easily manageable database to store both patient
 As a start, and due to time constraint, we will be focusing on integrating transcriptomic data first into our project.
 
 ### Workflow diagram
-![](![workflow](https://user-images.githubusercontent.com/52707598/120922022-c835ff80-c6be-11eb-9d12-62bfb9b104b0.png)
+![workflow](https://user-images.githubusercontent.com/52707598/120922022-c835ff80-c6be-11eb-9d12-62bfb9b104b0.png)
 
 
 
