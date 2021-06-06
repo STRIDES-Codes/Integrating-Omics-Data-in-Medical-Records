@@ -1,6 +1,13 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:frontend/models/patients.dart';
+import 'package:frontend/models/users.dart';
 import 'package:frontend/utils/http/auth.dart';
+import 'package:frontend/utils/http/fetch.dart';
 import 'package:frontend/utils/http/post.dart';
+import 'package:frontend/utils/functions/chekdoctor.dart';
+import 'package:frontend/widgets/dialogs/dashboards/admin/add_user.dart';
+import 'package:frontend/widgets/dialogs/dashboards/medecin/add_patient.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -399,7 +406,121 @@ class _LoginViewState extends State<LoginView> {
                                               .showSnackBar(SnackBar(
                                                   content: Text(
                                                       'Email out le mot de passe est invalid')));
-                                        } else {}
+                                        } else {
+                                          String full_name = value['name'];
+                                          String token = value['token'];
+                                          // print(token.runtimeType);
+                                          // print(value['function']);
+                                          // print(full_name);
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(SnackBar(
+                                                  content: Text(
+                                                      'Connection $full_name')));
+                                          switch (value['function']) {
+                                            case 'Admin':
+                                              fetch(context, "users", token)
+                                                  .then((user) {
+                                                List body_user =
+                                                    json.decode(user);
+                                                List<User> data_user = body_user
+                                                    .map(
+                                                        (e) => User.fromJson(e))
+                                                    .toList();
+
+                                                Map content = {
+                                                  'rows': data_user,
+                                                  "columns": [
+                                                    'First name',
+                                                    "Last name",
+                                                    'National ID',
+                                                    "Username",
+                                                    'Email',
+                                                    'Phone',
+                                                    "Type",
+                                                    "Active"
+                                                  ],
+                                                  "press": () {
+                                                    showDialog(
+                                                        context: context,
+                                                        builder: (BuildContext
+                                                            context) {
+                                                          return AddElement(
+                                                            title: 'User',
+                                                            token: token,
+                                                            full_name:
+                                                                full_name,
+                                                          );
+                                                        });
+                                                  },
+                                                  "subtitle": "User",
+                                                  "title": "Users"
+                                                };
+
+                                                Navigator.pushNamed(
+                                                    context, 'admin',
+                                                    arguments: {
+                                                      'token': token,
+                                                      'full_name': full_name,
+                                                      "content": content
+                                                    });
+                                              });
+                                              break;
+                                            case 'Medecin':
+                                              fetch(context, "patients", token)
+                                                  .then((user) {
+                                                List body_user =
+                                                    json.decode(user);
+                                                List<Patient> data_user =
+                                                    body_user
+                                                        .map((e) =>
+                                                            Patient.fromJson(e))
+                                                        .toList();
+                                                List<Patient> mine = is_mine(
+                                                    value['doctor_id'],
+                                                    data_user);
+                                                // print(mine);
+
+                                                Map content = {
+                                                  'rows': mine,
+                                                  "columns": [
+                                                    'First name',
+                                                    'Last name',
+                                                    "National ID",
+                                                    'Gender',
+                                                    "Birthdate",
+                                                    "Onset date",
+                                                  ],
+                                                  "press": () {
+                                                    showDialog(
+                                                        context: context,
+                                                        builder: (BuildContext
+                                                            context) {
+                                                          return AddPatient(
+                                                              id: value[
+                                                                  'doctor_id'],
+                                                              full_name:
+                                                                  full_name,
+                                                              token: token);
+                                                        });
+                                                  },
+                                                  "subtitle": "Patient",
+                                                  "title": "Mes Patients"
+                                                };
+
+                                                Navigator.pushNamed(
+                                                    context, 'medecin',
+                                                    arguments: {
+                                                      'token': token,
+                                                      'full_name': full_name,
+                                                      "content": content,
+                                                      'id': value['doctor_id']
+                                                    });
+                                              });
+                                              break;
+                                            case 'Chercheur':
+                                              break;
+                                          }
+                                        }
                                       });
                                   }
                                 },
