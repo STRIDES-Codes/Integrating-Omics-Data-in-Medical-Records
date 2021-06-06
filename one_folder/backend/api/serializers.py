@@ -32,12 +32,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style = {"input_type":"password"},write_only=True)
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email', 'username','cin','phone', 'function','password','password2']
+        fields = ['first_name', 'last_name', 'email', 'username','national_id','phone', 'function','password','password2']
     def save(self):
         account = User(
             email = self.validated_data['email'],
             username = self.validated_data['username'],
-            cin=self.validated_data['cin'],
+            national_id=self.validated_data['national_id'],
             first_name=self.validated_data['first_name'],
             last_name=self.validated_data['last_name'],
             phone=self.validated_data['phone'],
