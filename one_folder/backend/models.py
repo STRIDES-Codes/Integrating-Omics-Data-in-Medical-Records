@@ -20,7 +20,7 @@ class User(AbstractUser):
     username = models.CharField(_("Username"),unique=True, max_length=50, null=False)
     national_id = models.CharField(_("National ID"),unique=True, max_length=50, null= False)
     phone = models.CharField(_("Phone number"),unique=True, max_length=50,null= False)
-    is_active = models.BooleanField(_("Active ?"),default=False)
+    is_active = models.BooleanField(_("Active ?"),default=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS=['first_name','last_name',"function", "national_id",'phone','username']
 
