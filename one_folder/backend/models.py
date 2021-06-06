@@ -33,18 +33,25 @@ class Researcher(models.Model):
     user = models.OneToOneField(User, verbose_name=_("Account"), on_delete=models.CASCADE)
     adding_date = models.DateField(_("Adding date"), auto_now=True, auto_now_add=False)
     affiliation = models.CharField(_("Affiliation"), max_length=50)
-
+def generate_mrn():
+    import random 
+    while True:
+        mrn = random.randint(0,1000000000)
+        if Patient.objects.filter(mrn =mrn).count()==0:
+            break
+    return mrn
 class Patient(models.Model):
-    id = models.AutoField(_("ID"),primary_key=True)
+    mrn = models.IntegerField(_("MRN"), default=generate_mrn)
     doctor = models.ForeignKey(Doctor, verbose_name=_("Doctor"), on_delete=models.CASCADE)
     national_id = models.CharField(_("National id"),unique=True, max_length=50)
     city = models.CharField(_("city"), max_length=50, null=False)
     nationality = models.CharField(_("Nationality"), max_length=50, null=False)
-    gender = models.CharField(_("Gender"),choices=(("Male","Male"),("Female","Female")), max_length=50)
+    gender = models.CharField(_("Gender"),choices=(("Male","Male"),("Female","Female"),("Other","Other"),("Unknown","Unknown")), max_length=50)
     birthdate = models.DateField(_("Birthdate"), auto_now=False, auto_now_add=False,null=False)
     first_name = models.CharField(_("Firtst Name"),null=False, max_length=50)
     last_name = models.CharField(_("Last Name"),null= False, max_length=50)
     onset_date = models.DateField(_("Onset Date"), auto_now=True, auto_now_add=False)
+    phone = models.CharField(_("Phone"),unique=True, max_length=50)
     disease = models.CharField(_("Disease"), max_length=50, null=False)
     def age (self):
         return now - self.birtdate
