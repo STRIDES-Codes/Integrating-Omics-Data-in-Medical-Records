@@ -399,9 +399,7 @@ class _LoginViewState extends State<LoginView> {
                                               .showSnackBar(SnackBar(
                                                   content: Text(
                                                       'Email out le mot de passe est invalid')));
-                                        } else {
-                                          print(value['token']);
-                                        }
+                                        } else {}
                                       });
                                   }
                                 },
