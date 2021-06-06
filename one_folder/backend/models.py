@@ -67,6 +67,7 @@ class Comments(models.Model):
     patient = models.ForeignKey(Patient, verbose_name=_(""), on_delete=models.CASCADE)
     date = models.DateField(_("Date"), auto_now=True, auto_now_add=False)
     comment = models.TextField(_("Comment"))
+    
 def upload_to (instance, filename):
     return f"Sequences/{instance.patient.id}/{instance.add_date}_{instance.direction}.fastq"
 class Sequence(models.Model):
