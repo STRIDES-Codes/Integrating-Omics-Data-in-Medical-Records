@@ -67,7 +67,7 @@ class Comments(models.Model):
     patient = models.ForeignKey(Patient, verbose_name=_(""), on_delete=models.CASCADE)
     date = models.DateField(_("Date"), auto_now=True, auto_now_add=False)
     comment = models.TextField(_("Comment"))
-    
+
 def upload_to (instance, filename):
     return f"Sequences/{instance.patient.id}/{instance.add_date}_{instance.direction}.fastq"
 class Sequence(models.Model):
@@ -80,3 +80,4 @@ class GeneExpression(models.Model):
     gene = models.CharField(_("Gene"),null = False, max_length=50)
     expression = models.DecimalField(_("Expression level"), max_digits=10, decimal_places=3)
     sequence = models.ForeignKey(Sequence, verbose_name=_("Sequence"), on_delete=models.CASCADE)
+    date = models.DateField(_("Adding date"), auto_now=False, auto_now_add=False)
