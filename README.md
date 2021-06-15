@@ -40,5 +40,4 @@ As a start, and due to time constraint, we will be focusing on integrating trans
 * Nihal HABIB, PhD candidate, nhlhabib98@gmail.com, UM6SS, Casablanca, Morocco.
 * Abdesselam BOUGDIRA, PhD in Engineering Sciences, abdesselam.bougdira@usmba.ac,Laboratory of Engineering Sciences, USMBA, Fez, Morocco.
 * Mustapha LEMSYAH, Engineering student, mustapha.lemsyah@gmail.com, High-Tech, Rabat, Morocco.
-* Douae EL GHOUBALI, PhD candidate, douae1231@gmail.com, UM6SS, Casablanca, Morocco. 
-* Hédia TNANI, PhD, hediatnani0@gmail.com, Pasteur Institut, Tunisia.
+* Douae EL GHOUBALI, PhD candidate, douae1231@gmail.com, UM6SS, Casablanca, Morocco.
