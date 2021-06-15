@@ -30,8 +30,8 @@ As a start, and due to time constraint, we will be focusing on integrating trans
 ## Dependencies: 
 
 ## Planned features
-- Incorporate more Omics data into our tool
-- Use Artificial Intelligence to provide more in depth analysis with detailed output.
+* Incorporate more Omics data into our tool
+* Use Artificial Intelligence to provide more in depth analysis with detailed output.
 
 
 
