@@ -36,7 +36,7 @@ As a start, and due to time constraint, we will be focusing on integrating trans
 
 
 ## Team
-* Abdellah IDRISSI AZAMI, PhD candidate, idrissi.azami.abdellah@gmail.com, UM6SS, Casablanca, Morocco.
+- Abdellah IDRISSI AZAMI, PhD candidate, idrissi.azami.abdellah@gmail.com, UM6SS, Casablanca, Morocco.
 * Nihal HABIB, PhD candidate, nhlhabib98@gmail.com, UM6SS, Casablanca, Morocco.
 * Abdesselam BOUGDIRA, PhD in Engineering Sciences, abdesselam.bougdira@usmba.ac,Laboratory of Engineering Sciences, USMBA, Fez, Morocco.
 * Mustapha LEMSYAH, Engineering student, mustapha.lemsyah@gmail.com, High-Tech, Rabat, Morocco.
